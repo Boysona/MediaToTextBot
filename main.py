@@ -36,14 +36,17 @@ TRANSCRIBE_MAX_WORKERS = int(os.environ.get("TRANSCRIBE_MAX_WORKERS", "4"))
 PREPEND_SILENCE_SEC = int(os.environ.get("PREPEND_SILENCE_SEC", "5"))
 AMBIENT_CALIB_SEC = float(os.environ.get("AMBIENT_CALIB_SEC", "3"))
 ASSEMBLYAI_API_KEY = os.environ.get("ASSEMBLYAI_API_KEY", "")
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://example.com")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBRWP4BaPLPpYdB5_E3C3TVDGqiHrjv4vQ")
+WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://mediatotextbot.onrender.com")
 SECRET_KEY = os.environ.get("SECRET_KEY", "change-me")
-MONGO_URI = os.environ.get("MONGO_URI", "")
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://hoskasii:GHyCdwpI0PvNuLTg@cluster0.dy7oe7t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DB_NAME = os.environ.get("DB_NAME", "telegram_bot_db")
 REQUIRED_CHANNEL = os.environ.get("REQUIRED_CHANNEL", "")
 
-BOT_TOKENS = json.loads(os.environ.get("BOT_TOKENS_JSON", "[]"))
+BOT_TOKENS = [
+    "7770743573:AAEhVz2jKwdJjhrm3XH0bAhhLucg2H4AvMY",
+    "7790991731:AAF4NHGm0BJCf08JTdBaUWKzwfs82_Y9Ecw",
+]
 
 client = MongoClient(MONGO_URI) if MONGO_URI else None
 db = client[DB_NAME] if client else {}
