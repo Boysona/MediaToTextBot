@@ -48,7 +48,7 @@ BOT_TOKENS = [
     "7790991731:AAF4NHGm0BJCf08JTdBaUWKzwfs82_Y9Ecw",
 ]
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBRWP4BaPLPpYdB5_E3C3TVDGqiHrjv4vQ")
-WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://media-to-text-bot-p3mm.onrender.com")
+WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://mediatotextbot.onrender.com")
 
 DB_USER = "hoskasii"
 DB_PASSWORD = "GHyCdwpI0PvNuLTg"
