@@ -1,0 +1,9 @@
+Flask
+requests
+pyTelegramBotAPI
+pymongo
+dnspython
+itsdangerous
+SpeechRecognition
+python-dotenv
+gunicorn
