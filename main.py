@@ -46,7 +46,7 @@ BOT_TOKENS = [
     "7790991731:AAF4NHGm0BJCf08JTdBaUWKzwfs82_Y9Ecw",
 ]
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBRWP4BaPLPpYdB5_E3C3TVDGqiHrjv4vQ")
-WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://media-to-text-bot-p3mm.onrender.com")
+WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://mediatotextbot.onrender.com")
 SECRET_KEY = os.environ.get("SECRET_KEY", "super-secret-please-change")
 MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://hoskasii:GHyCdwpI0PvNuLTg@cluster0.dy7oe7t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DB_NAME = os.environ.get("DB_NAME", "telegram_bot_db")
