@@ -11,7 +11,7 @@ from functools import wraps
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-ASSEMBLYAI_API_KEY = os.environ.get("ASSEMBLYAI_API_KEY", "3da64715f8304ca3a7c78638c4bfd90c")
+
 
 CHUNK_DURATION_SEC = int(os.environ.get("CHUNK_DURATION_SEC", "55"))
 CHUNK_BATCH_SIZE = int(os.environ.get("CHUNK_BATCH_SIZE", "30"))
@@ -35,6 +35,7 @@ BOT_TOKENS = [
     "7790991731:AAF4NHGm0BJCf08JTdBaUWKzwfs82_Y9Ecw",
 ]
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBRWP4BaPLPpYdB5_E3C3TVDGqiHrjv4vQ")
+ASSEMBLYAI_API_KEY = os.environ.get("ASSEMBLYAI_API_KEY", "3da64715f8304ca3a7c78638c4bfd90c")
 WEBHOOK_BASE = os.environ.get("WEBHOOK_BASE", "https://mediatotextbot.onrender.com")
 SECRET_KEY = os.environ.get("SECRET_KEY", "super-secret-please-change")
 ADMIN_PANEL_SECRET = os.environ.get("ADMIN_PANEL_SECRET", SECRET_KEY)
