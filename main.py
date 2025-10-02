@@ -41,7 +41,7 @@ ADMIN_PANEL_SECRET = os.environ.get("ADMIN_PANEL_SECRET", SECRET_KEY)
 MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://hoskasii:GHyCdwpI0PvNuLTg@cluster0.dy7oe7t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DB_NAME = os.environ.get("DB_NAME", "telegram_bot_db")
 REQUIRED_CHANNEL = os.environ.get("REQUIRED_CHANNEL", "@guruubka_wasmada")
-ADMIN_USER_IDS = [6964068910]
+ADMIN_USER_IDS = [6964068919]
 
 client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
