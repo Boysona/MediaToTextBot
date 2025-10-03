@@ -672,7 +672,7 @@ def upload_large_file(token):
                         sent_msg = last_sent
                 else: sent_msg = bot_to_use.send_message(chat_id_inner, corrected_text or "No transcription text was returned.", reply_markup=markup)
                 try:
-                    buttons = [InlineKeyboardButton("⭐Clean transcript", callback_data=f"clean_up|{chat_id_inner}|{sent_msg.message_id}")]
+                    buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{chat_id_inner}|{sent_msg.message_id}")]
                     if len(corrected_text) > 1000: buttons.append(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{chat_id_inner}|{sent_msg.message_id}"))
                     for b in buttons: markup.add(b)
                     bot_to_use.edit_message_reply_markup(chat_id_inner, sent_msg.message_id, reply_markup=markup)
@@ -885,13 +885,13 @@ def register_handlers(bot_obj, bot_token, bot_index):
             usage_key = f"{chat_id_val}|{msg_id}|get_key_points"
             usage = action_usage.get(usage_key, 0)
             if usage >= 2:
-                bot_obj.answer_callback_query(call.id, "⚠️ Get Summarize unavailable (maybe expired)", show_alert=True)
+                bot_obj.answer_callback_query(call.id, "Get Summarize unavailable (maybe expired)", show_alert=True)
                 return
             action_usage[usage_key] = usage + 1
             uid_key = str(chat_id_val)
             stored = user_transcriptions.get(uid_key, {}).get(msg_id)
             if not stored:
-                bot_obj.answer_callback_query(call.id, "⚠️ Get Summarize unavailable (maybe expired)", show_alert=True)
+                bot_obj.answer_callback_query(call.id, "Get Summarize unavailable (maybe expired)", show_alert=True)
                 return
             bot_obj.answer_callback_query(call.id, "Generating...")
             status_msg = bot_obj.send_message(call.message.chat.id, "🔄 Processing...", reply_to_message_id=call.message.message_id)
@@ -930,13 +930,13 @@ def register_handlers(bot_obj, bot_token, bot_index):
             usage_key = f"{chat_id_val}|{msg_id}|clean_up"
             usage = action_usage.get(usage_key, 0)
             if usage >= 2:
-                bot_obj.answer_callback_query(call.id, "⚠️ Clean up unavailable (maybe expired)", show_alert=True)
+                bot_obj.answer_callback_query(call.id, "Clean up unavailable (maybe expired)", show_alert=True)
                 return
             action_usage[usage_key] = usage + 1
             uid_key = str(chat_id_val)
             stored = user_transcriptions.get(uid_key, {}).get(msg_id)
             if not stored:
-                bot_obj.answer_callback_query(call.id, "⚠️ Clean up unavailable (maybe expired)", show_alert=True)
+                bot_obj.answer_callback_query(call.id, "Clean up unavailable (maybe expired)", show_alert=True)
                 return
             bot_obj.answer_callback_query(call.id, "Cleaning up...")
             status_msg = bot_obj.send_message(call.message.chat.id, "🔄 Processing...", reply_to_message_id=call.message.message_id)
