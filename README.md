@@ -1,7 +1,3 @@
-MediaToTextBot - Documentation for Developers
-
-Overview
-
 MediaToTextBot is a powerful Telegram bot that provides free transcription and summarization services for voice messages, audio files, and videos. The bot supports multiple languages and offers both online and offline processing capabilities.
 
 Features
@@ -205,7 +201,7 @@ Support & Contribution
 
 For issues and contributions:
 
-· Telegram: @boyso20
+· Telegram: https://t.me/boyso20
 · Repository: [GitHub Link]
 · Documentation: This README
 
