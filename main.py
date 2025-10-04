@@ -414,7 +414,7 @@ def handle_media_common(message, bot_obj, bot_token, bot_index=0):
         token = signed_upload_token(message.chat.id, lang, bot_index)
         upload_link = f"{WEBHOOK_BASE.rstrip('/')}/upload/{token}"
         max_display_mb = TELEGRAM_MAX_BYTES // (1024 * 1024)
-        text = f'😓Telegram API doesn’t allow me to download your file if it’s larger than {max_display_mb}MB:👉🏻 <a href="{upload_link}">Click here to Upload  your file</a>'
+        text = f'Telegram API doesn’t allow me to download your file if it’s larger than {max_display_mb}MB:👉🏻 <a href="{upload_link}">Click here to Upload  your file</a>'
         bot_obj.send_message(message.chat.id, text, disable_web_page_preview=True, parse_mode='HTML', reply_to_message_id=message.message_id)
         return
     processing_msg = bot_obj.send_message(message.chat.id, "🔄 Processing...", reply_to_message_id=message.message_id)
@@ -486,7 +486,7 @@ def handle_media_common(message, bot_obj, bot_token, bot_index=0):
                     except Exception: pass
             else:
                 markup = InlineKeyboardMarkup()
-                sent_msg = bot_obj.send_message(message.chat.id, corrected_text or "😪Sorry, but the voice language was not the one you selected, or the voice is unclear! Check that the language of the file he is speaking and your settings are the same.", reply_to_message_id=message.message_id, reply_markup=markup)
+                sent_msg = bot_obj.send_message(message.chat.id, corrected_text or "⚠️ Make sure the voice is speaking in the language you Choosed or clear.", reply_to_message_id=message.message_id, reply_markup=markup)
                 try:
                     buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{sent_msg.message_id}")]
                     if len(corrected_text) > 1000: buttons.append(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{message.chat.id}|{sent_msg.message_id}"))
