@@ -450,7 +450,7 @@ def handle_media_common(message, bot_obj, bot_token, bot_index=0):
                     markup = InlineKeyboardMarkup()
                     sent = bot_obj.send_document(message.chat.id, f, reply_to_message_id=message.message_id, reply_markup=markup)
                     try:
-                        buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{sent.message_id}")]
+                        #buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{sent.message_id}")]
                         if len(corrected_text) > 1000: buttons.append(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{message.chat.id}|{sent.message_id}"))
                         for b in buttons: markup.add(b)
                         bot_obj.edit_message_reply_markup(message.chat.id, sent.message_id, reply_markup=markup)
@@ -471,7 +471,7 @@ def handle_media_common(message, bot_obj, bot_token, bot_index=0):
                         if idx == 0: last_sent = bot_obj.send_message(message.chat.id, chunk, reply_to_message_id=message.message_id)
                         else: last_sent = bot_obj.send_message(message.chat.id, chunk)
                     try:
-                        buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{last_sent.message_id}")]
+                        #buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{last_sent.message_id}")]
                         if len(corrected_text) > 1000: buttons.append(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{message.chat.id}|{last_sent.message_id}"))
                         for b in buttons: markup.add(b)
                         bot_obj.edit_message_reply_markup(message.chat.id, last_sent.message_id, reply_markup=markup)
@@ -488,7 +488,7 @@ def handle_media_common(message, bot_obj, bot_token, bot_index=0):
                 markup = InlineKeyboardMarkup()
                 sent_msg = bot_obj.send_message(message.chat.id, corrected_text or "⚠️ Make sure the voice is speaking in the language you Choosed or clear.", reply_to_message_id=message.message_id, reply_markup=markup)
                 try:
-                    buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{sent_msg.message_id}")]
+                    #buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{message.chat.id}|{sent_msg.message_id}")]
                     if len(corrected_text) > 1000: buttons.append(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{message.chat.id}|{sent_msg.message_id}"))
                     for b in buttons: markup.add(b)
                     bot_obj.edit_message_reply_markup(message.chat.id, sent_msg.message_id, reply_markup=markup)
@@ -672,7 +672,7 @@ def upload_large_file(token):
                         sent_msg = last_sent
                 else: sent_msg = bot_to_use.send_message(chat_id_inner, corrected_text or "No transcription text was returned.", reply_markup=markup)
                 try:
-                    buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{chat_id_inner}|{sent_msg.message_id}")]
+                    #buttons = [InlineKeyboardButton("⭐️Clean transcript", callback_data=f"clean_up|{chat_id_inner}|{sent_msg.message_id}")]
                     if len(corrected_text) > 1000: buttons.append(InlineKeyboardButton("Get Summarize", callback_data=f"get_key_points|{chat_id_inner}|{sent_msg.message_id}"))
                     for b in buttons: markup.add(b)
                     bot_to_use.edit_message_reply_markup(chat_id_inner, sent_msg.message_id, reply_markup=markup)
