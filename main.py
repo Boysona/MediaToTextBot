@@ -277,7 +277,7 @@ def transcribe_with_assemblyai(file_path:str,language_code:str,timeout_seconds:i
             if not upload_url: raise RuntimeError("Upload failed: no upload_url returned")
         except Exception as e: raise RuntimeError("AssemblyAI upload failed: "+str(e))
     try:
-        payload={"audio_url":upload_url,"model":"nano"}
+        payload={"audio_url":upload_url,"model":"universal"}
         if language_code: payload["language_code"]=language_code
         resp=requests.post("https://api.assemblyai.com/v2/transcript",headers={**headers,"content-type":"application/json"},json=payload,timeout=timeout_seconds);resp.raise_for_status()
         job_id=resp.json().get("id")
