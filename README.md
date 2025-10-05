@@ -1,4 +1,4 @@
-Telegram Transcriber Bot
+Telegram MediaToTextBot
 
 A compact Telegram bot + Flask backend that accepts voice/audio/video files, transcribes them (using local speech_recognition or AssemblyAI), and returns cleaned transcripts to users. Designed to run as a webhook-enabled Flask app or locally for testing.
 
