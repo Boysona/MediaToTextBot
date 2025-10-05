@@ -689,7 +689,7 @@ def register_handlers(bot_obj,bot_token,bot_index):
             if message.new_chat_members[0].id==bot_obj.get_me().id:
                 group_data={'_id':str(message.chat.id),'title':message.chat.title,'type':message.chat.type,'added_date':datetime.now()}
                 groups_collection.update_one({'_id':group_data['_id']},{'$set':group_data},upsert=True)
-                bot_obj.send_message(message.chat.id,"Thanks for adding me! I'm ready to transcribe your media files.")
+                bot_obj.send_message(message.chat.id,"Thanks for adding me your group! I'm ready to transcribe any media files from this group .")
         except: logging.exception("Error in handle_new_chat_members")
 
     @bot_obj.message_handler(content_types=['left_chat_member'])
