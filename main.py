@@ -932,7 +932,7 @@ def register_handlers(bot_obj, bot_token, bot_index):
             animation_thread.start()
             try:
                 lang = get_stt_user_lang(str(chat_id_val)) or "en"
-                instruction = f"Please revise and polish the following text in clear, proper (lang={lang}).and format it nicely Do not add introductions or explanations."
+                instruction = f"Correct only spelling and grammar errors in this text (lang={lang}).If the text appears to have missing parts or is not well-balanced, use deep search to obtain the information and write it accurately and coherently. Only use this if the text seems incomplete or has gaps left by ASR. Do not add introductions or explanations."
                 try: cleaned = ask_gemini(stored, instruction)
                 except Exception: cleaned = normalize_text_offline(stored)
             except Exception: cleaned = ""
