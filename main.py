@@ -887,7 +887,7 @@ def register_handlers(bot_obj, bot_token, bot_index):
             animation_thread.start()
             try:
                 lang = get_stt_user_lang(str(chat_id_val)) or "en"
-                instruction = f"What is this report about? Please summarize them for me into (lang={lang}) also If that is correct, please tell me briefly without adding any introductions, notes, or extra phrases."
+                instruction = f"What is this report about? Please summarize them for me into (lang={lang})  without adding any introductions, notes, or extra phrases."
                 try: summary = ask_gemini(stored, instruction)
                 except Exception: summary = extract_key_points_offline(stored, max_points=6)
             except Exception: summary = ""
