@@ -932,7 +932,7 @@ def register_handlers(bot_obj, bot_token, bot_index):
             animation_thread.start()
             try:
                 lang = get_stt_user_lang(str(chat_id_val)) or "en"
-                instruction = f"Clean and normalize this transcription (lang={lang}). Remove ASR artifacts like [inaudible], repeated words, filler noises, timestamps, and incorrect punctuation. Produce a clean, well-punctuated, readable text in the same language. Do not add introductions or explanations."
+                instruction = f"Please revise and polish the following text in clear, proper (lang={lang}).and format it nicely Do not add introductions or explanations."
                 try: cleaned = ask_gemini(stored, instruction)
                 except Exception: cleaned = normalize_text_offline(stored)
             except Exception: cleaned = ""
