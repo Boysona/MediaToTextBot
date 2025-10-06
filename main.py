@@ -664,7 +664,7 @@ def upload_large_file(token):
                             if idx == 0: last_sent = bot_to_use.send_message(chat_id_inner, chunk)
                             else: last_sent = bot_to_use.send_message(chat_id_inner, chunk)
                         sent_msg = last_sent
-                else: sent_msg = bot_to_use.send_message(chat_id_inner, corrected_text or "No transcription text was returned.", reply_markup=InlineKeyboardMarkup())
+                else: sent_msg = bot_to_use.send_message(chat_id_inner, corrected_text or "⚠️ Warning Make sure the voice is clear or speaking in the language you Choosed.", reply_markup=InlineKeyboardMarkup())
                 try:
                     attach_action_buttons(bot_to_use, chat_id_inner, sent_msg.message_id, corrected_text)
                 except Exception: pass
