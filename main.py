@@ -109,8 +109,7 @@ def send_subscription_message(chat_id: int, bot_obj):
         return
     try:
         chat = bot_obj.get_chat(chat_id)
-        if chat.type != 'private':
-            return
+        
     except Exception:
         return
     try:
