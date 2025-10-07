@@ -455,7 +455,7 @@ def handle_media_common(message, bot_obj, bot_token, bot_index=0):
             except Exception as e:
                 error_msg = str(e)
                 logging.exception("Error during transcription")
-                if "ffmpeg" in error_msg.lower(): bot_obj.send_message(message.chat.id, "⚠️ Server error: ffmpeg not found or conversion failed. Contact admin @boyso.", reply_to_message_id=message.message_id)
+                if "ffmpeg" in error_msg.lower(): bot_obj.send_message(message.chat.id, "⚠️ Server error: ffmpeg not found or conversion failed. Contact admin @laki343.", reply_to_message_id=message.message_id)
                 elif is_transcoding_like_error(error_msg): bot_obj.send_message(message.chat.id, "⚠️ Transcription error: file is not audible. Please send a different file.", reply_to_message_id=message.message_id)
                 else: bot_obj.send_message(message.chat.id, f"Error during transcription: {error_msg}", reply_to_message_id=message.message_id)
                 return
