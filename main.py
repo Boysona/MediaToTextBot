@@ -932,7 +932,13 @@ def register_handlers(bot_obj, bot_token, bot_index):
             animation_thread.start()
             try:
                 lang = get_stt_user_lang(str(chat_id_val)) or "en"
-                instruction = f"Correct only spelling and grammar errors like how te make” → “how to make”; “she go school” → “she goes to school”; “is raining today” → “it is raining today” etc... in this text (lang={lang}). Do not add introductions or explanations."
+                instruction = f"""Correct only spelling and grammar errors 
+Proofread and correct this transcription (lang={lang}).
+Fix grammar, spelling, and word choice errors (e.g. 'how te make' → 'how to make').
+Keep the text natural and fluent in the same language.
+Do not remove any meaningful content, only correct mistakes.
+Return only the corrected text — no introductions or explanations.
+"""
                 try: cleaned = ask_gemini(stored, instruction)
                 except Exception: cleaned = normalize_text_offline(stored)
             except Exception: cleaned = ""
