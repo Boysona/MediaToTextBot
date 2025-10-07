@@ -751,7 +751,7 @@ def register_handlers(bot_obj, bot_token, bot_index):
             if message.chat.type == 'private' and str(message.from_user.id) not in ADMIN_USER_IDS and not check_subscription(message.from_user.id, bot_obj):
                 send_subscription_message(message.chat.id, bot_obj)
                 return
-            text = "Commands supported:\n/start - Show welcome message\n/lang  - Change language\n/mode  - Change result delivery mode\n/help  - This help message\n\nSend a voice/audio/video (up to 20MB for Telegram) and I will transcribe it.\nIf it's larger than Telegram limits, you'll be provided a secure web upload link (supports up to 250MB) Need more help? Contact: @boyso20"
+            text = "Commands supported:\n/start - Show welcome message\n/lang  - Change language\n/mode  - Change result delivery mode\n/help  - This help message\n\nSend a voice/audio/video (up to 20MB for Telegram) and I will transcribe it.\nIf it's larger than Telegram limits, you'll be provided a secure web upload link (supports up to 250MB) Need more help? Contact: @laki343"
             bot_obj.send_message(message.chat.id, text)
         except Exception: logging.exception("Error in handle_help")
 
