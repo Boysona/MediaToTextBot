@@ -638,7 +638,7 @@ LANDING_HTML_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
     <div class="header">
-        <h1>🎙️ MediaToTextBot 📝</h1>
+        <h1>MediaToTextBot </h1>
         <p>Your Telegram Bot for Voice, Audio, and Video Transcription</p>
     </div>
 
@@ -658,7 +658,7 @@ LANDING_HTML_TEMPLATE = """<!DOCTYPE html>
             <div class="feature-card">
                 <span class="icon">🌐</span>
                 <h3>Multi-Language Support</h3>
-                <p>Choose from over 40 languages, including English, Somali (so), Arabic, Spanish, and many more, for accurate transcription.</p>
+                <p>Choose from over 40 languages, including English, Arabic, Spanish, and many more, for accurate transcription.</p>
             </div>
             <div class="feature-card">
                 <span class="icon">⚡</span>
@@ -673,7 +673,7 @@ LANDING_HTML_TEMPLATE = """<!DOCTYPE html>
             <div class="feature-card">
                 <span class="icon">⬆️</span>
                 <h3>Large File Upload</h3>
-                <p>Secure web upload link for files larger than Telegram's 20MB limit, supporting up to 250MB.</p>
+                <p>Secure web upload link for files larger than Telegram's 2GB limit, supporting up to 5GB.</p>
             </div>
             <div class="feature-card">
                 <span class="icon">🆓</span>
