@@ -10,7 +10,6 @@ from collections import Counter
 
 logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Variables-ka cusub ayaa halkan lagu daray
 CHUNK_DURATION_SEC=int(os.environ.get("CHUNK_DURATION_SEC","20"))
 CHUNK_BATCH_SIZE=int(os.environ.get("CHUNK_BATCH_SIZE","20"))
 CHUNK_BATCH_PAUSE_SEC=int(os.environ.get("CHUNK_BATCH_PAUSE_SEC","5"))
@@ -27,7 +26,7 @@ PREPEND_SILENCE_SEC=int(os.environ.get("PREPEND_SILENCE_SEC","3"))
 AMBIENT_CALIB_SEC=float(os.environ.get("AMBIENT_CALIB_SEC","2"))
 REQUEST_TIMEOUT_GEMINI=int(os.environ.get("REQUEST_TIMEOUT_GEMINI","300"))
 CHUNK_OVERLAP_SEC=float(os.environ.get("CHUNK_OVERLAP_SEC","0.3"))
-CLEANUP_DAYS=int(os.environ.get("CLEANUP_DAYS","7")) # <--- VARIABLE-KA CUSUB
+CLEANUP_DAYS=int(os.environ.get("CLEANUP_DAYS","1"))
 
 GEMINI_API_KEY=os.environ.get("GEMINI_API_KEY","")
 WEBHOOK_BASE=os.environ.get("WEBHOOK_BASE","")
