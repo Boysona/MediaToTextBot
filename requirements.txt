@@ -8,3 +8,4 @@ SpeechRecognition
 python-dotenv
 gunicorn
 vosk
+pocketsphinx
