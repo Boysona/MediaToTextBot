@@ -10,8 +10,8 @@ from collections import Counter
 
 logging.basicConfig(level=logging.INFO,format='%(asctime)s - %(levelname)s - %(message)s')
 
-CHUNK_DURATION_SEC=int(os.environ.get("CHUNK_DURATION_SEC","55"))
-CHUNK_BATCH_SIZE=int(os.environ.get("CHUNK_BATCH_SIZE","30"))
+CHUNK_DURATION_SEC=int(os.environ.get("CHUNK_DURATION_SEC","20"))
+CHUNK_BATCH_SIZE=int(os.environ.get("CHUNK_BATCH_SIZE","20"))
 CHUNK_BATCH_PAUSE_SEC=int(os.environ.get("CHUNK_BATCH_PAUSE_SEC","5"))
 RECOGNITION_MAX_RETRIES=int(os.environ.get("RECOGNITION_MAX_RETRIES","3"))
 RECOGNITION_RETRY_WAIT=int(os.environ.get("RECOGNITION_RETRY_WAIT","3"))
@@ -23,7 +23,7 @@ REQUEST_TIMEOUT_TELEGRAM=int(os.environ.get("REQUEST_TIMEOUT_TELEGRAM","300"))
 REQUEST_TIMEOUT_LLM=int(os.environ.get("REQUEST_TIMEOUT_LLM","300"))
 TRANSCRIBE_MAX_WORKERS=int(os.environ.get("TRANSCRIBE_MAX_WORKERS","4"))
 PREPEND_SILENCE_SEC=int(os.environ.get("PREPEND_SILENCE_SEC","3"))
-AMBIENT_CALIB_SEC=float(os.environ.get("AMBIENT_CALIB_SEC","1"))
+AMBIENT_CALIB_SEC=float(os.environ.get("AMBIENT_CALIB_SEC","2"))
 REQUEST_TIMEOUT_GEMINI=int(os.environ.get("REQUEST_TIMEOUT_GEMINI","300"))
 CHUNK_OVERLAP_SEC=float(os.environ.get("CHUNK_OVERLAP_SEC","0.3"))
 
