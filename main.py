@@ -327,7 +327,7 @@ def handle_media_common(message,bot_obj,bot_token,bot_index=0):
     lang=get_stt_user_lang(user_id_str)
     if file_size and file_size>TELEGRAM_MAX_BYTES:
         max_display_mb=TELEGRAM_MAX_BYTES//(1024*1024)
-        text=f"⚠️ Your file is larger than Telegram's limit ({max_display_mb} MB). Please upload the file to a cloud storage service (Google Drive, Dropbox, etc.) and send me a direct download link or compress/split the file and resend."
+        text=f"⚠️ Your file is larger than Telegram's limit ({max_display_mb} MB). Please upload the smaller file."
         bot_obj.send_message(message.chat.id,text,disable_web_page_preview=True,parse_mode='HTML',reply_to_message_id=message.message_id);return
     processing_msg=bot_obj.send_message(message.chat.id,"🔄 Processing...",reply_to_message_id=message.message_id)
     processing_msg_id=processing_msg.message_id;stop_animation={"stop":False}
