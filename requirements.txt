@@ -7,5 +7,4 @@ itsdangerous
 SpeechRecognition
 python-dotenv
 gunicorn
-vosk
-pocketsphinx
+
