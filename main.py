@@ -639,11 +639,11 @@ def register_handlers(bot_obj,bot_token,bot_index):
     def handle_admin(message):
         try:
             if not is_admin(message.from_user.id):
-                bot_obj.send_message(message.chat.id,"Access Denied: Only admins can use this command.");return
+                bot_obj.send_message(message.chat.id,"🤫This command is only for bot administrators, not you.");return
             total_users=users_collection.count_documents({});total_groups=groups_collection.count_documents({})
             total_stt_conversions=sum(user.get("stt_conversion_count",0) for user in users_collection.find({}))
             seven_days_ago=datetime.now()-timedelta(days=7);active_users_7d=users_collection.count_documents({"last_active":{"$gte":seven_days_ago}})
-            report_text=f"<b>📊 Bot Admin Panel</b>\n\n👤 Total Users: <b>{total_users}</b>\n👥 Total Groups: <b>{total_groups}</b>\n🗣️ Total Transcriptions: <b>{total_stt_conversions:,}</b>\n🟢 Active Users (Last 7 Days): <b>{active_users_7d}</b>\n\n"
+            report_text=f"<b>💎 Admin Panel</b>\n\n👤 Total Users: <b>{total_users}</b>\n👥 Total Groups: <b>{total_groups}</b>\n🗣️ Total Transcriptions: <b>{total_stt_conversions:,}</b>\n🟢 Active Users (Last 7 Days): <b>{active_users_7d}</b>\n\n"
             link=f"{WEBHOOK_BASE.rstrip('/')}/admin?secret={ADMIN_PANEL_SECRET}";m=InlineKeyboardMarkup();m.add(InlineKeyboardButton("Open Admin Panel",url=link));bot_obj.send_message(message.chat.id,report_text,parse_mode='HTML',reply_markup=m)
         except:
             logging.exception("Error in handle_admin");bot_obj.send_message(message.chat.id,"An error occurred while fetching admin stats.")
