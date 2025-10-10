@@ -722,7 +722,7 @@ def register_handlers(bot_obj,bot_token,bot_index):
             stop_animation={"stop":False};animation_thread=threading.Thread(target=animate_processing_message,args=(bot_obj,call.message.chat.id,status_msg.message_id,lambda:stop_animation["stop"]));animation_thread.start()
             try:
                 lang=get_stt_user_lang(str(chat_id_val)) or "en"
-                instruction=f"What is this report, please tell me in({lang})."
+                instruction=f"What is the report for this? Please tell me the {lang} language "
                 try: summary=ask_gemini(stored,instruction)
                 except: summary=extract_key_points_offline(stored,max_points=6)
             except: summary=""
