@@ -101,7 +101,7 @@ def send_subscription_message(chat_id,bot_obj):
     if not REQUIRED_CHANNEL: return
     try:
         chat=bot_obj.get_chat(chat_id)
-        #if chat.type!='private': return
+        if chat.type!='private': return
     except: return
     try:
         m=InlineKeyboardMarkup();m.add(InlineKeyboardButton("Click here to join the Group ",url=f"https://t.me/{REQUIRED_CHANNEL.lstrip('@')}"))
